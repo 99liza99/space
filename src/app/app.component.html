@@ -4,10 +4,7 @@
     <app-select [currentOption]="filter.rover" [label]="'Choose Rover'" [options]="rovers" (newOptionEvent)="changeRover($event)"></app-select>
     <app-select [currentOption]="filter.camera" [label]="'Choose Camera'" [options]="cameras" (newOptionEvent)="changeCamera($event)"></app-select>
   </div>
-  <div class="ranger">
-    <h1 style="color: white">Sols: {{currentSol}}</h1>
-    <input type="range" min="10" max="1000" step="1" [(ngModel)]="currentSol" (change)="changeSol()">
-  </div>
+ <app-range [currentSol]="currentSol" (newSolEvent)="changeSol($event)"></app-range>
 </div>
 <div *ngIf="data$ | async as response">
 <app-images [photos]="response.photos"></app-images>

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Camera, Rover} from "./interfaces/options";
 import {ExpeditionService} from "./services/expedition.service";
 import {Observable} from "rxjs";
@@ -35,8 +35,8 @@ export class AppComponent {
     this.service.filterValue.next(this.filter);
   }
 
-  changeSol() {
-    this.filter.sol.value = this.currentSol;
+  changeSol(data: number) {
+    this.filter.sol.value = data;
     this.service.filterValue.next(this.filter);
   }
 }
