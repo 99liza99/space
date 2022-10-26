@@ -6,9 +6,13 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
 
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
+
   ],
   imports: [
     BrowserModule,
