@@ -1,27 +1,18 @@
+<div class="container">
 <div class="actions">
-  <mat-form-field appearance="fill">
-    <mat-label>Choose an option</mat-label>
-    <mat-select [(ngModel)]="option1">
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Choose an option</mat-label>
-    <mat-select [(ngModel)]="option2">
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Choose an option</mat-label>
-    <mat-select [(ngModel)]="option3">
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="search()">Primary</button>
+  <div class="selects">
+    <app-select [currentOption]="filter.rover" [label]="'Choose Rover'" [options]="rovers" (newOptionEvent)="changeRover($event)"></app-select>
+    <app-select [currentOption]="filter.camera" [label]="'Choose Camera'" [options]="cameras" (newOptionEvent)="changeCamera($event)"></app-select>
+  </div>
+  <div class="ranger">
+    <h1 style="color: white">Sols: {{currentSol}}</h1>
+    <input type="range" min="10" max="1000" step="1" [(ngModel)]="currentSol" (change)="changeSol()">
+  </div>
+</div>
+<div *ngIf="data$ | async as response">
+<app-images [photos]="response.photos"></app-images>
+</div>
+<div #elseBlock>
+  not found
+</div>
 </div>

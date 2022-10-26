@@ -5,21 +5,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from "@angular/material/select";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
-
-
-
+import {SharedModule} from "./shared/shared.module";
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
-   
-
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSelectModule,
     MatButtonModule,
+    HttpClientModule,
     FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
