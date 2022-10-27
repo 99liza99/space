@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Photo} from "../../interfaces/response";
-
+import lgZoom from 'lightgallery/plugins/zoom';
 @Component({
   selector: 'app-images',
   templateUrl: './images.component.html',
@@ -8,7 +8,10 @@ import {Photo} from "../../interfaces/response";
 })
 export class ImagesComponent implements OnInit {
   @Input() photos: Photo[] | undefined;
-
+  settings = {
+    counter: true,
+    plugins: [lgZoom],
+  };
   constructor() {
   }
 

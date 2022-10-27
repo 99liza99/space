@@ -12,7 +12,11 @@ export const DEFAULT_FILTER: Filter = {
   },
   sol: {
     value: 340
+  },
+  page: {
+    value: 1
   }
+
 }
 
 export const ROVERS_OPTIONS: Rover[] = [

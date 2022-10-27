@@ -1,9 +1,11 @@
+@import '/src/app/variables.scss';
 .ranger {
   width: 100%;
-  margin: 0 10px;
+
+
   h1{
     text-align: center;
-    color: white;
+    color: $white-color;
   }
 
   input {

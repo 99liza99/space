@@ -7,6 +7,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
+import {NgxUiLoaderModule, NgxUiLoaderRouterModule} from "ngx-ui-loader";
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import {HttpClientModule} from "@angular/common/http";
     MatButtonModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

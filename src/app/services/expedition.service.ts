@@ -29,6 +29,7 @@ export class ExpeditionService {
     let params = {
       sol: filter.sol.value,
       camera: filter.camera.key,
+      page: filter.page.value,
       api_key: this.apiKey
     }
     return this.http.get<Result>(this.adminUrl + filter.rover.key + '/photos', {params});

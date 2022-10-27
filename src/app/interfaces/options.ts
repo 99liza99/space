@@ -7,3 +7,4 @@ export interface Camera extends Option {}
 export interface Sol {
   value: number
 }
+export interface Page extends Sol {}

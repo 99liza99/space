@@ -1,0 +1,24 @@
+@import '/src/app/variables.scss';
+.wrapper {
+  padding: 20px 0;
+  width: 100%;
+  background-color: $section-color;
+ .icons {
+
+   text-align: center;
+   svg {
+     cursor: pointer;
+     width: 25px;
+     fill: $main-color;
+     margin-left: 15px;
+   }
+ }
+  .description  {
+    text-align: center;
+    p {
+      margin-top: 10px;
+      color: $main-color;
+    }
+  }
+
+}

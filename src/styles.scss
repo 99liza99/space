@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-
+@import '~lightgallery/scss/lightgallery';
 @include mat.core();
 
 $theme-primary: mat.define-palette(mat.$orange-palette);

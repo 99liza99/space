@@ -1,15 +1,27 @@
-<div class="container">
-<div class="actions">
-  <div class="selects">
-    <app-select [currentOption]="filter.rover" [label]="'Choose Rover'" [options]="rovers" (newOptionEvent)="changeRover($event)"></app-select>
-    <app-select [currentOption]="filter.camera" [label]="'Choose Camera'" [options]="cameras" (newOptionEvent)="changeCamera($event)"></app-select>
+<div class="main" ngxUiLoaderBlurred [blur]="blurNumber">
+  <div class="container">
+    <div class="actions">
+      <div class="selects">
+        <app-select [currentOption]="filter.rover" [label]="'Choose Rover'" [options]="rovers"
+                    (newOptionEvent)="changeRover($event)"></app-select>
+        <app-select [currentOption]="filter.camera" [label]="'Choose Camera'" [options]="cameras"
+                    (newOptionEvent)="changeCamera($event)"></app-select>
+      </div>
+      <app-range [currentSol]="currentSol" (newSolEvent)="changeSol($event)"></app-range>
+    </div>
+    <div class="result">
+      <div *ngIf="data$ | async as response">
+        <ng-template [ngIf]="response.photos.length > 0" [ngIfElse]="notFoundBlock">
+          <app-images [photos]="response.photos"></app-images>
+          <button *ngIf="!hideButtonNext" mat-raised-button color="primary"
+                  (click)="showMorePhotos()"><span>See more...</span></button>
+        </ng-template>
+        <ng-template #notFoundBlock>
+          <app-not-found></app-not-found>
+        </ng-template>
+      </div>
+    </div>
   </div>
- <app-range [currentSol]="currentSol" (newSolEvent)="changeSol($event)"></app-range>
+  <app-footer></app-footer>
 </div>
-<div *ngIf="data$ | async as response">
-<app-images [photos]="response.photos"></app-images>
-</div>
-<div #elseBlock>
-  not found
-</div>
-</div>
+<ngx-ui-loader fgsColor="#ff9800"></ngx-ui-loader>

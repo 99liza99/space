@@ -1,0 +1,36 @@
+@import '/src/app/variables.scss';
+
+.wrapper {
+  margin: 10px  auto 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    margin: auto;
+    display: block;
+    max-width: 200px;
+  }
+
+  .text {
+    text-align: center;
+    display: block;
+    width: 100%;
+
+    h1 {
+      color: $white-color;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    h2 {
+      color: $white-color;
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+
+
+}

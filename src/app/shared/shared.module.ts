@@ -6,24 +6,34 @@ import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
 import { ImagesComponent } from './images/images.component';
 import { RangeComponent } from './range/range.component';
-
+import { LightgalleryModule } from 'lightgallery/angular';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoaderComponent } from './loader/loader.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     SelectComponent,
     ImagesComponent,
-    RangeComponent
+    RangeComponent,
+    NotFoundComponent,
+    LoaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    LightgalleryModule
   ],
   exports: [
     SelectComponent,
     ImagesComponent,
-    RangeComponent
+    RangeComponent,
+    NotFoundComponent,
+    LoaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule {
