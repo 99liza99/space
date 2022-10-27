@@ -1,1 +1,11 @@
 @import '/src/app/variables.scss';
+a {
+  img {
+    margin: 10px;
+    border-radius: 5%;
+    transition: 0.35s;
+    &:hover {
+      transform: scale(1.1,1.1);
+    }
+  }
+}
