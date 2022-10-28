@@ -42,3 +42,11 @@
   }
 
 }
+@media only screen and (max-width: $mobile_size) {
+  .container {
+    .selects {
+      flex-direction: column;
+    }
+  }
+
+}
