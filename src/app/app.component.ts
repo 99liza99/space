@@ -13,7 +13,7 @@ import {NgxUiLoaderService} from "ngx-ui-loader";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  currentSol: number = DEFAULT_FILTER.sol.value;
+  currentSol: number = DEFAULT_FILTER.sol;
   rovers: Rover[] = ROVERS_OPTIONS;
   cameras: Camera[] = CAMERA_OPTIONS;
   filter: Filter = DEFAULT_FILTER;
@@ -27,7 +27,7 @@ export class AppComponent {
   ngOnInit() {
     this.ngxService.start();
     this.data$.subscribe(res => {
-      if (res.photos.length < this.filter.page.value * 25) {
+      if (res.photos.length < this.filter.page * 25) {
         this.hideButtonNext = true;
       } else {
         this.hideButtonNext = false;
@@ -36,13 +36,13 @@ export class AppComponent {
     })
   }
 
-  changeRover(data: Rover) {
+  changeRover(data: string) {
     this.ngxService.start();
     this.filter.rover = data;
     this.service.filterValue.next(this.filter);
   }
 
-  changeCamera(data: Camera) {
+  changeCamera(data: string) {
     this.ngxService.start();
     this.filter.camera = data;
     this.service.filterValue.next(this.filter);
@@ -50,13 +50,13 @@ export class AppComponent {
 
   changeSol(data: number) {
     this.ngxService.start();
-    this.filter.sol.value = data;
+    this.filter.sol = data;
     this.service.filterValue.next(this.filter);
   }
 
   showMorePhotos() {
     this.ngxService.start();
-    this.filter.page.value++;
+    this.filter.page++;
     this.service.filterValue.next(this.filter);
   }
 }

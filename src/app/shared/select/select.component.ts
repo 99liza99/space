@@ -7,10 +7,10 @@ import {Option} from "../../interfaces/options";
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent implements OnInit {
-  @Input() currentOption: Option | undefined;
+  @Input() currentOption: string | undefined;
   @Input() label: string | undefined;
   @Input() options: Option[] = []
-  @Output() newOptionEvent = new EventEmitter<Option>();
+  @Output() newOptionEvent = new EventEmitter<string>();
 
   constructor() {
   }

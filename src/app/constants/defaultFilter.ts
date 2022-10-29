@@ -2,21 +2,10 @@ import {Filter} from "../interfaces/filters";
 import {Rover} from "../interfaces/options";
 
 export const DEFAULT_FILTER: Filter = {
-  rover: {
-    key: 'curiosity',
-    name: 'Curiosity'
-  },
-  camera: {
-    key: 'fhaz',
-    name: 'Front Hazard Avoidance Camera'
-  },
-  sol: {
-    value: 340
-  },
-  page: {
-    value: 1
-  }
-
+  rover: 'curiosity',
+  camera: 'fhaz',
+  sol: 340,
+  page: 1
 }
 
 export const ROVERS_OPTIONS: Rover[] = [

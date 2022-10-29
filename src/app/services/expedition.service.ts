@@ -27,11 +27,11 @@ export class ExpeditionService {
 
   getImages(filter: Filter): Observable<Result> {
     let params = {
-      sol: filter.sol.value,
-      camera: filter.camera.key,
-      page: filter.page.value,
+      sol: filter.sol,
+      camera: filter.camera,
+      page: filter.page,
       api_key: this.apiKey
     }
-    return this.http.get<Result>(this.adminUrl + filter.rover.key + '/photos', {params});
+    return this.http.get<Result>(this.adminUrl + filter.rover + '/photos', {params});
   }
 }
