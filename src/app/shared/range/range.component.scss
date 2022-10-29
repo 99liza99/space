@@ -7,12 +7,11 @@
     text-align: center;
     color: $white-color;
   }
-
-  input {
+  mat-slider{
     width: 100%;
-    box-sizing: border-box;
   }
 }
+
 @media only screen and (max-width: $mobile_size) {
   .ranger {
     width: 50%;
@@ -20,8 +19,5 @@
   }
   h1 {
     font-size: 20px;
-  }
-  input {
-    background: orange;
   }
 }

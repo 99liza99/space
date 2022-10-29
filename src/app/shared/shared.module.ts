@@ -10,6 +10,7 @@ import { LightgalleryModule } from 'lightgallery/angular';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FooterComponent } from './footer/footer.component';
+import {MatSliderModule} from "@angular/material/slider";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { FooterComponent } from './footer/footer.component';
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
-    LightgalleryModule
+    LightgalleryModule,
+    MatSliderModule,
+
   ],
   exports: [
     SelectComponent,
