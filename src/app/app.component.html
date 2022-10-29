@@ -10,10 +10,10 @@
       <app-range [currentSol]="currentSol" (newSolEvent)="changeSol($event)"></app-range>
     </div>
     <div class="result">
-      <div *ngIf="data$ | async as response">
-        <ng-template [ngIf]="response.photos.length > 0" [ngIfElse]="notFoundBlock">
-          <app-images [photos]="response.photos"></app-images>
-          <button *ngIf="!hideButtonNext" mat-raised-button color="primary"
+      <div *ngIf="images">
+        <ng-template [ngIf]="images.length > 0" [ngIfElse]="notFoundBlock">
+          <app-images [photos]="images"></app-images>
+          <button *ngIf="showButtonNext" mat-raised-button color="primary"
                   (click)="showMorePhotos()"><span>See more...</span></button>
         </ng-template>
         <ng-template #notFoundBlock>

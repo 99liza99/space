@@ -18,4 +18,11 @@ export class RangeComponent implements OnInit {
   changeSol() {
     this.newSolEvent.emit(this.currentSol);
   }
+  formatLabel(value: number) {
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+
+    return value;
+  }
 }

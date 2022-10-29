@@ -1,23 +1,33 @@
 @import '/src/app/variables.scss';
+
 lightgallery {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
 
   a {
     margin: 10px;
+
     img {
       width: 100%;
       border-radius: 5%;
       transition: 0.35s;
+
       &:hover {
-        transform: scale(1.1,1.1);
+        transform: scale(1.1, 1.1);
       }
     }
   }
 
 }
+
+@media only screen and (max-width: $tablet_size) {
+  lightgallery {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+
 @media only screen and (max-width: $mobile_size) {
-    lightgallery {
-      grid-template-columns: 50% 50%;
-    }
+  lightgallery {
+    grid-template-columns: 50% 50%;
+  }
 }

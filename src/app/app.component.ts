@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Camera, Rover} from "./interfaces/options";
 import {ExpeditionService} from "./services/expedition.service";
 import {Observable, tap} from "rxjs";
-import {Result} from "./interfaces/response";
+import {Photo, Result} from "./interfaces/response";
 import {Filter} from "./interfaces/filters";
 import {CAMERA_OPTIONS, DEFAULT_FILTER, ROVERS_OPTIONS} from "./constants/defaultFilter";
 import {NgxUiLoaderService} from "ngx-ui-loader";
@@ -18,7 +18,8 @@ export class AppComponent {
   cameras: Camera[] = CAMERA_OPTIONS;
   filter: Filter = DEFAULT_FILTER;
   data$: Observable<Result> = this.service.images$;
-  hideButtonNext: boolean = false;
+  images: Photo[] | undefined;
+  showButtonNext: boolean = false;
   blurNumber: number = 5;
 
   constructor(private service: ExpeditionService, private ngxService: NgxUiLoaderService) {
@@ -27,11 +28,12 @@ export class AppComponent {
   ngOnInit() {
     this.ngxService.start();
     this.data$.subscribe(res => {
-      if (res.photos.length < this.filter.page * 25) {
-        this.hideButtonNext = true;
-      } else {
-        this.hideButtonNext = false;
+      if (this.images && this.showButtonNext){
+        this.images = [ ...this.images, ...res.photos];
+      }else {
+        this.images = res.photos;
       }
+      this.showButtonNext = this.images.length >= this.filter.page * 25;
       this.ngxService.stop();
     })
   }
@@ -60,3 +62,5 @@ export class AppComponent {
     this.service.filterValue.next(this.filter);
   }
 }
+
+//453
