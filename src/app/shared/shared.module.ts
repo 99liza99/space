@@ -4,13 +4,13 @@ import {SelectComponent} from './select/select.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
-import { ImagesComponent } from './images/images.component';
-import { RangeComponent } from './range/range.component';
-import { LightgalleryModule } from 'lightgallery/angular';
-import { NotFoundComponent } from './not-found/not-found.component';
-
-import { FooterComponent } from './footer/footer.component';
+import {ImagesComponent} from './images/images.component';
+import {RangeComponent} from './range/range.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {FooterComponent} from './footer/footer.component';
 import {MatSliderModule} from "@angular/material/slider";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {PhotoGalleryModule} from '@twogate/ngx-photo-gallery'
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import {MatSliderModule} from "@angular/material/slider";
     ImagesComponent,
     RangeComponent,
     NotFoundComponent,
-
     FooterComponent
   ],
   imports: [
@@ -26,16 +25,15 @@ import {MatSliderModule} from "@angular/material/slider";
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
-    LightgalleryModule,
     MatSliderModule,
-
+    BrowserAnimationsModule,
+    PhotoGalleryModule,
   ],
   exports: [
     SelectComponent,
     ImagesComponent,
     RangeComponent,
     NotFoundComponent,
-
     FooterComponent
   ]
 })

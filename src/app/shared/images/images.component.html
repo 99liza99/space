@@ -1,6 +1,7 @@
-<lightgallery [settings]="settings">
-<a *ngFor="let photo of photos" href="{{photo.img_src}}">
-  <img src="{{photo.img_src}}" alt="">
-</a>
-</lightgallery>
+<div class="images" [photoGalleryGroup]="{arrowEl:true}">
+  <div *ngFor="let photo of photos" class="images-item" [photoGallery]="photo.img_src">
+    <img src="{{photo.img_src}}" alt=""/>
+  </div>
+</div>
+
 

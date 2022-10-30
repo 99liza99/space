@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@import '~lightgallery/scss/lightgallery';
+
 @include mat.core();
 
 $theme-primary: mat.define-palette(mat.$orange-palette);
@@ -22,4 +22,24 @@ body, html {
   padding: 0;
   background-image: url("/assets/background.png");
   background-size: 50%;
+}
+
+/** Hot fix Photoswipe library */
+.lightbox-wrapper {
+  .pswp--svg {
+    .pswp__button--arrow--left {
+      background-position: -140px -40px !important;
+      &:before {
+        background: none !important;
+      }
+    }
+
+    .pswp__button--arrow--right {
+      background-position: -100px -40px !important;
+
+      &:before {
+        background: none !important;
+      }
+    }
+  }
 }
