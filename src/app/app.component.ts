@@ -6,7 +6,6 @@ import {Photo, Result} from "./interfaces/response";
 import {Filter} from "./interfaces/filters";
 import {CAMERA_OPTIONS, DEFAULT_FILTER, ROVERS_OPTIONS} from "./constants/defaultFilter";
 import {NgxUiLoaderService} from "ngx-ui-loader";
-import {Meta} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -24,33 +23,15 @@ export class AppComponent {
   isFilterChanged: boolean = false;
   blurNumber: number = 5;
 
-  constructor(private service: ExpeditionService, private ngxService: NgxUiLoaderService, private meta: Meta) {
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'Website which helps people to explore NASA`s expeditions to Mars'
-      },
-      {
-        name: 'og:description',
-        content: 'Website which helps people to explore NASA`s expeditions to Mars'
-      },
-      {
-        name: 'og:title',
-        content: 'NASA`s expeditions to Mars'
-      },
-      {
-        name: 'og:url',
-        content: 'https://space2022.herokuapp.com/'
-      }
-    ]);
+  constructor(private service: ExpeditionService, private ngxService: NgxUiLoaderService) {
   }
 
   ngOnInit() {
     this.ngxService.start();
     this.data$.subscribe(res => {
-      if (this.images && this.showButtonNext && !this.isFilterChanged) {
-        this.images = [...this.images, ...res.photos];
-      } else {
+      if (this.images && this.showButtonNext && !this.isFilterChanged){
+        this.images = [ ...this.images, ...res.photos];
+      }else {
         this.images = res.photos;
       }
       this.showButtonNext = this.images.length >= this.filter.page * 25;
