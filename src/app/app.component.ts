@@ -20,6 +20,7 @@ export class AppComponent {
   data$: Observable<Result> = this.service.images$;
   images: Photo[] | undefined;
   showButtonNext: boolean = false;
+  isFilterChanged: boolean = false;
   blurNumber: number = 5;
 
   constructor(private service: ExpeditionService, private ngxService: NgxUiLoaderService) {
@@ -28,7 +29,7 @@ export class AppComponent {
   ngOnInit() {
     this.ngxService.start();
     this.data$.subscribe(res => {
-      if (this.images && this.showButtonNext){
+      if (this.images && this.showButtonNext && !this.isFilterChanged){
         this.images = [ ...this.images, ...res.photos];
       }else {
         this.images = res.photos;
@@ -41,24 +42,28 @@ export class AppComponent {
   changeRover(data: string) {
     this.ngxService.start();
     this.filter.rover = data;
+    this.isFilterChanged = true;
     this.service.filterValue.next(this.filter);
   }
 
   changeCamera(data: string) {
     this.ngxService.start();
     this.filter.camera = data;
+    this.isFilterChanged = true;
     this.service.filterValue.next(this.filter);
   }
 
   changeSol(data: number) {
     this.ngxService.start();
     this.filter.sol = data;
+    this.isFilterChanged = true;
     this.service.filterValue.next(this.filter);
   }
 
   showMorePhotos() {
     this.ngxService.start();
     this.filter.page++;
+    this.isFilterChanged = false;
     this.service.filterValue.next(this.filter);
   }
 }
