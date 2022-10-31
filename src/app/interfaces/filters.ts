@@ -1,4 +1,3 @@
-import {Camera, Page, Rover, Sol} from "./options";
 
 export interface Filter {
   rover: string,

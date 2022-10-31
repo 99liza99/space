@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {Camera, Rover} from "./interfaces/options";
 import {ExpeditionService} from "./services/expedition.service";
-import {Observable, tap} from "rxjs";
+import {Observable} from "rxjs";
 import {Photo, Result} from "./interfaces/response";
 import {Filter} from "./interfaces/filters";
 import {CAMERA_OPTIONS, DEFAULT_FILTER, ROVERS_OPTIONS} from "./constants/defaultFilter";
@@ -63,4 +63,4 @@ export class AppComponent {
   }
 }
 
-//453
+

@@ -35,7 +35,6 @@
     background-color: #000000b3;
 
     button {
-      margin: 10px;
       display: block;
       margin: 10px auto;
     }
@@ -44,9 +43,17 @@
 }
 @media only screen and (max-width: $mobile_size) {
   .container {
-    .selects {
-      flex-direction: column;
+    .result {
+      padding: 5px;
+    }
+    .actions{
+      .selects{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        app-select{
+        }
+      }
     }
   }
-
 }
+

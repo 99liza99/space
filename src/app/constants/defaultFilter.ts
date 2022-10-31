@@ -4,7 +4,7 @@ import {Rover} from "../interfaces/options";
 export const DEFAULT_FILTER: Filter = {
   rover: 'curiosity',
   camera: 'fhaz',
-  sol: 340,
+  sol: 433,
   page: 1
 }
 
